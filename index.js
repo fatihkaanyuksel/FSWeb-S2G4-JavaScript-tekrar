@@ -1,5 +1,7 @@
 /* Aşağıda global olarak tanımlanmış değişkenler bulunmaktadır, bunları değiştirmeyiniz. Açıklamaları takip ederek görevleri tamamlayın. */
 
+const { useCallback } = require("react");
+
 const pi = 3.14159;
 
 const sayilar = [
@@ -100,28 +102,63 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
-
-/* kodlar buraya */
+enkucuk = sayilar[0];
+enbuyuk = sayilar[0];
+for(let i = 0; i<sayilar.length; i++) {
+  if(sayilar[i] < enkucuk) {
+    enkucuk = sayilar[i];
+  }
+  if(sayilar[i] > enbuyuk) {
+    enbuyuk = sayilar[i];
+  }
+}
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach((item) => {
+  if(item % 3 === 0) {
+    ucetambolunenler.push(item);
+  }
+})
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = 0;
+ucetambolunenler.reduce((toplam,yeni) => toplam+yeni,0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((item) => item < 500);
+
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b);
 
 // 3f çözümü
+const tekrarSayilari = {};
+tekraredensayilar = [];
+for(let i = 0; i<sayilar.length; i++) {
+  const sayi = sayilar[i];
+  if (tekrarSayilari[sayi]) {
+    tekrarSayilari[sayi] += 1;
+  } else {
+    tekrarSayilari[sayi] = 1;
+  }
+}
 
-/* kodlar buraya */
+for (const sayi in tekrarSayilari) {
+  const miktar = tekrarSayilari[sayi];
+  
+  if (miktar > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${miktar} kere tekrar edilmiştir`);
+  }
+}
+
+console.log(tekraredensayilar);
+
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
