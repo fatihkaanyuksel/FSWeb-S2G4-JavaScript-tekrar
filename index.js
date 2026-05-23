@@ -1,6 +1,6 @@
 /* Aşağıda global olarak tanımlanmış değişkenler bulunmaktadır, bunları değiştirmeyiniz. Açıklamaları takip ederek görevleri tamamlayın. */
 
-const { useCallback } = require("react");
+import { useCallback } from "react";
 
 const pi = 3.14159;
 
@@ -125,8 +125,8 @@ sayilar.forEach((item) => {
 
 // 3c çözümü:
 
-ucebolunenlerintoplami = 0;
-ucetambolunenler.reduce((toplam,yeni) => toplam+yeni,0);
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,yeni) => toplam+yeni,0);
+
 
 // 3d çözümü
 
@@ -167,7 +167,7 @@ function sa() {
   return "as";
 }
 sa();
-module.exports = {
+export default {
   sa,
   CemberinCevresi,
   CemberinAlani,
